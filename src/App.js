@@ -1,10 +1,10 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Rockets from './components/Rockets';
-import NavBar from './components/Navbar/navbar';
 import Missions from './components/missions';
 import MyProfile from './components/myprofile';
+import Rockets from './pages/rocketlist';
+import NavBar from './components/Navbar/navbar';
 
 function App() {
   return (
