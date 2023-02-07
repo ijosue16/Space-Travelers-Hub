@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Missions = () => (
   <>
-    <p>Into the missions</p>
+    <p>This is the missions</p>
   </>
 );
 export default Missions;
