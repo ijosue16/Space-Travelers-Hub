@@ -16,6 +16,7 @@ function Rockets() {
       description={rkt.description}
       name={rkt.name}
       image={rkt.image}
+      reserved={rkt.reserved}
     />
   ));
   return (

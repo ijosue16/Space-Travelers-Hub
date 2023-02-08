@@ -1,13 +1,22 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { cancelRocketReservation, reserveRocket } from '../redux/Rocket/rockets';
 
 const Rocket = (props) => {
   const {
-    id, name, description, image,
+    id, name, description, image, reserved,
   } = props;
-  const handleButtonclick = () => {
-    console.log(id);
+
+  const dispatch = useDispatch();
+
+  const ReserveRockethandler = () => {
+    dispatch(reserveRocket(id));
+  };
+
+  const RockeReserveCancelthandler = () => {
+    dispatch(cancelRocketReservation(id));
   };
   return (
     <>
@@ -23,10 +32,29 @@ const Rocket = (props) => {
                 {name}
                 {' '}
               </h5>
+
               <p className="card-text">
-                {description}
+                { reserved ? [<span key={0}><span className="badge bg-success py-2" key={0}>Reserved</span></span>, '   ', description] : description }
               </p>
-              <button type="button" className="btn  btn-primary rounded-0 " onClick={handleButtonclick}>Reserve rocket</button>
+              { reserved
+                ? (
+                  <button
+                    type="button"
+                    className="btn btn-outline-secondary"
+                    onClick={RockeReserveCancelthandler}
+                  >
+                    Cancel Reservation
+                  </button>
+                )
+                : (
+                  <button
+                    type="button"
+                    className="btn btn-primary "
+                    onClick={ReserveRockethandler}
+                  >
+                    Reserve rocket
+                  </button>
+                )}
             </div>
           </div>
         </div>
@@ -40,5 +68,7 @@ Rocket.propTypes = {
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
+  reserved: PropTypes.bool.isRequired,
 };
+
 export default Rocket;
