@@ -9,19 +9,23 @@ const getMissionsAPI = async () => {
   const data = await resp.json();
   return data;
 };
-export const getMissions = createAsyncThunk(GET_MISSIONS, async () => {
-  const resp = await getMissionsAPI();
-  const missionsData = [];
-  resp.forEach((mission) => {
-    const singleMission = {
-      id: mission.mission_id,
-      name: mission.mission_name,
-      description: mission.description,
-      reserved: false,
-    };
-    missionsData.push(singleMission);
-  });
-  return missionsData;
+export const getMissions = createAsyncThunk(GET_MISSIONS, async (e, thunkAPI) => {
+  const currentState = thunkAPI.getState();
+  if (currentState.Missions.length === 0) {
+    const resp = await getMissionsAPI();
+    const missionsData = [];
+    resp.forEach((mission) => {
+      const singleMission = {
+        id: mission.mission_id,
+        name: mission.mission_name,
+        description: mission.description,
+        reserved: false,
+      };
+      missionsData.push(singleMission);
+    });
+    return missionsData;
+  }
+  return currentState.Missions;
 });
 
 export const updateMission = createAction('mission/UPDATE_MISSION');
