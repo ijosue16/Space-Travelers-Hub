@@ -12,20 +12,24 @@ const getRocketsksAPI = async () => {
   const data = await resp.json();
   return data;
 };
-export const getRockets = createAsyncThunk(GET_ROCKETS, async () => {
-  const resp = await getRocketsksAPI();
-  const rocketsData = [];
-  resp.forEach((rocket) => {
-    const singleRocket = {
-      id: rocket.id,
-      name: rocket.rocket_name,
-      description: rocket.description,
-      image: rocket.flickr_images[0],
-      reserved: false,
-    };
-    rocketsData.push(singleRocket);
-  });
-  return rocketsData;
+export const getRockets = createAsyncThunk(GET_ROCKETS, async (e, thunkAPI) => {
+  const currentState = thunkAPI.getState();
+  if (currentState.Rocketz.length === 0) {
+    const resp = await getRocketsksAPI();
+    const rocketsData = [];
+    resp.forEach((rocket) => {
+      const singleRocket = {
+        id: rocket.id,
+        name: rocket.rocket_name,
+        description: rocket.description,
+        image: rocket.flickr_images[0],
+        reserved: false,
+      };
+      rocketsData.push(singleRocket);
+    });
+    return rocketsData;
+  }
+  return currentState.Rocketz;
 });
 // action for reserving data
 
