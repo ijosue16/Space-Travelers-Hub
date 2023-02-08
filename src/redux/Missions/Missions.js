@@ -1,4 +1,4 @@
-import { createAsyncThunk, createReducer } from '@reduxjs/toolkit';
+import { createAsyncThunk, createAction, createReducer } from '@reduxjs/toolkit';
 
 const GET_MISSIONS = 'space traveler hub/missions/GET_MISSIONS';
 const URL = 'https://api.spacexdata.com/v3/missions';
@@ -14,18 +14,27 @@ export const getMissions = createAsyncThunk(GET_MISSIONS, async () => {
   const missionsData = [];
   resp.forEach((mission) => {
     const singleMission = {
-      id: mission.id,
+      id: mission.mission_id,
       name: mission.mission_name,
       description: mission.description,
+      reserved: false,
     };
     missionsData.push(singleMission);
   });
   return missionsData;
 });
 
+export const updateMission = createAction('mission/UPDATE_MISSION');
+
 const Missionreducer = createReducer(INITIALSTATE, ((builder) => {
   builder
     .addCase(getMissions.fulfilled, ((state, action) => action.payload))
+    .addCase(updateMission, (state, { payload }) => state.map((mission) => {
+      if (mission.id === payload) {
+        return { ...mission, reserved: !mission.reserved };
+      }
+      return mission;
+    }))
     .addDefaultCase();
 }));
 
