@@ -21,7 +21,7 @@ const Rocket = (props) => {
   return (
     <>
 
-      <div className="card mb-3 border-0 rounde-0 ">
+      <div className="card mb-3 border-0 rounde-0 shadow">
         <div className="row g-0">
           <div className="col-md-3">
             <img src={image} className="bd-placeholder-img img-fluid " width="100%" height="10" alt={name} />
