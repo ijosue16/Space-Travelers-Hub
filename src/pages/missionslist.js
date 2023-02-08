@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Table } from 'react-bootstrap';
-import { getMissions } from '../redux/Missions/Missions';
+import { Table, Badge } from 'react-bootstrap';
+import Button from 'react-bootstrap/Button';
+
+import { getMissions, updateMission } from '../redux/Missions/Missions';
 
 function Missions() {
   const dispatch = useDispatch();
@@ -26,10 +28,15 @@ function Missions() {
               <td className="mission_name-td" width={100}>{mission.name}</td>
               <td className="mission_description" width={1150}>{mission.description}</td>
               <td>
-                <button type="button" className="btn btn-secondary">Not a Member</button>
+                <button type="button" className="btn"><Badge bg={mission.reserved ? 'primary' : 'secondary'}>{mission.reserved ? 'Active Member' : 'NOT A MEMBER'}</Badge></button>
               </td>
               <td>
-                <button type="button" className="btn btn-secondary">Join Mission</button>
+                <Button
+                  variant={mission.reserved ? 'outline-danger' : 'outline-secondary'}
+                  onClick={() => { dispatch(updateMission(mission.id)); }}
+                >
+                  {mission.reserved ? 'Leave Mission' : 'Join Mission'}
+                </Button>
               </td>
             </tr>
           ))}
