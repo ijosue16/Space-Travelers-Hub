@@ -1,12 +1,29 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import PropTypes from 'prop-types';
+// /////// changes added
+import { useDispatch } from 'react-redux';
+import { cancelRocketReservation, reserveRocket } from '../redux/Rocket/rockets';
 
 const Rocket = (props) => {
   const {
-    id, name, description, image,
+    id, name, description, image, reserved,
   } = props;
-  const handleButtonclick = () => {
+
+  // /////// changes added
+  const dispatch = useDispatch();
+  // const handleButtonclick = () => {
+  //   console.log(id);
+  // };
+
+  // /////// changes added
+  const ReserveRockethandler = () => {
+    dispatch(reserveRocket(id));
+    console.log(id);
+  };
+
+  const RockeReserveCancelthandler = () => {
+    dispatch(cancelRocketReservation(id));
     console.log(id);
   };
   return (
@@ -23,10 +40,35 @@ const Rocket = (props) => {
                 {name}
                 {' '}
               </h5>
+              {/* ////////////chnges added */}
               <p className="card-text">
-                {description}
+                {/* {description} */}
+                { reserved ? [<span key={0}><span className="badge bg-success py-2" key={0}>Reserved</span></span>, '   ', description] : description }
               </p>
-              <button type="button" className="btn  btn-primary rounded-0 " onClick={handleButtonclick}>Reserve rocket</button>
+              {/* ////////////chnges added */}
+              { reserved
+                ? (
+                  <button
+                    type="button"
+                    className="btn btn-outline-secondary"
+                    onClick={RockeReserveCancelthandler}
+                  >
+                    Cancel Reservation
+                  </button>
+                )
+                : (
+                  <button
+                    type="button"
+                    className="btn btn-primary "
+                    onClick={ReserveRockethandler}
+                  >
+                    Reserve rocket
+                  </button>
+                )}
+              {/* <button type="button" className="btn  btn-primary "
+               onClick={ReserveRockethandler(id)}>Reserve rocket</button>
+              <button type="button"
+              class="btn btn-outline-secondary">Cancel Reservation</button> */}
             </div>
           </div>
         </div>
@@ -40,5 +82,9 @@ Rocket.propTypes = {
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
+  reserved: PropTypes.bool.isRequired,
 };
+// Rocket.defaultProps = {
+//   reserved: false,
+// };
 export default Rocket;
