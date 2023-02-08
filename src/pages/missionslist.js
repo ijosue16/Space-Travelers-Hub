@@ -23,8 +23,8 @@ function Missions() {
         <tbody>
           {missions.map((mission) => (
             <tr key={mission.id}>
-              <td className="mission_name-td">{mission.name}</td>
-              <td className="mission_description">{mission.description}</td>
+              <td className="mission_name-td" width={100}>{mission.name}</td>
+              <td className="mission_description" width={1150}>{mission.description}</td>
               <td>
                 <button type="button" className="btn btn-secondary">Not a Member</button>
               </td>
