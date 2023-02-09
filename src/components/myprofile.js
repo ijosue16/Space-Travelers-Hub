@@ -6,6 +6,9 @@ const MyProfile = () => {
   const reservedRockets = useSelector((state) => state.Rocketz
     .filter(((rocket) => rocket.reserved)));
 
+  const reservedMissions = useSelector((state) => state.Missions
+    .filter(((mission) => mission.reserved)));
+
   return (
     <>
       <div className="container-fluid d-block d-md-flex gap-2 ">
@@ -26,8 +29,14 @@ const MyProfile = () => {
         <div className="flex-fill">
           <h4 className="">My missions</h4>
           <ul className="list-group">
-            <li className="list-group-item">An mission</li>
-
+            {reservedMissions.length > 0 ? reservedMissions.map((mission) => (
+              <li
+                className="list-group-item"
+                key={mission.id}
+              >
+                {mission.name}
+              </li>
+            )) : <li className="border-0 list-unstyled" key={0}>No reserved missions yet!!</li> }
           </ul>
         </div>
       </div>
