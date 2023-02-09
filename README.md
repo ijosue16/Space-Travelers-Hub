@@ -84,7 +84,7 @@ It uses Redux as a state management tool.
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-Not ready for now
+[Live demo](https://space-traveler-hub-epdv.onrender.com)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -107,7 +107,7 @@ In order to run this project you need:
 
 Clone this repository to your desired folder:
 
-  ["git clone"](https://github.com/ijosue16/space-travelers-hub)
+  `git clone https://github.com/ijosue16/space-travelers-hub`
 
   `cd space-travelers-hub`
 
@@ -127,7 +127,7 @@ To run the project in a development server, execute the following command:
 
 To run the tests in a development server, execute the following command:
 
-`npm test`
+`npm run test`
 
 To to build for the production, execute the following command:
 
@@ -135,7 +135,7 @@ To to build for the production, execute the following command:
 
 ### Deployment
 
-You can deploy this project using [Github Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site)
+You can deploy this project using [Render](https://dashboard.render.com/#)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -151,7 +151,7 @@ You can deploy this project using [Github Pages](https://docs.github.com/en/page
 
 - GitHub: [@ijosue16](https://github.com/https://github.com/ijosue16)
 - Twitter: [@iradukunda_23](https://twitter.com/https://twitter.com/iradukunda_23)
-- LinkedIn: [josue-iradukunda](https://www.linkedin.com/in/twahirwa-josue-iradukunda-3ab047250/)
+- LinkedIn: [twahirwa josue iradukunda](https://www.linkedin.com/in/twahirwa-josue-iradukunda-3ab047250/)
 
 👤 **Jacinta Ngwu**
 
