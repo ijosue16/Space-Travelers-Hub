@@ -5,7 +5,7 @@ import planetimg from './image assets/planet.png';
 
 const NavBar = () => (
   <>
-    <nav className="navbar bg-body-tertiary d-flex flex-row px-3 pb-1 pt-1 border-2 border-bottom mb-5 shadow ">
+    <nav className="navbar bg-body-tertiary d-flex flex-row mx-3 py-1 border-2 border-bottom mb-5  ">
       <div className="navbar-brand d-flex align-items-center gap-2">
         <img src={planetimg} alt="Logo" width="60" height="60" className="d-inline-block align-text-top" />
         <h2 className="m-0 text-wrap">Space traveler&apos;s Hub</h2>
