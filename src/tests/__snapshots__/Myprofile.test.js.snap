@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`tests for my profile Myprofile renders correctlly 1`] = `
+<div
+  className="container-fluid d-block d-md-flex gap-2 "
+>
+  <div
+    className="flex-fill"
+  >
+    <h4
+      className=""
+    >
+      My rockets
+    </h4>
+    <ul
+      className="list-group"
+    >
+      <li
+        className="border-0"
+      >
+        No reserved rockets yet!!
+      </li>
+    </ul>
+  </div>
+  <div
+    className="flex-fill"
+  >
+    <h4
+      className=""
+    >
+      My missions
+    </h4>
+    <ul
+      className="list-group"
+    >
+      <li
+        className="border-0 list-unstyled"
+      >
+        No reserved missions yet!!
+      </li>
+    </ul>
+  </div>
+</div>
+`;
