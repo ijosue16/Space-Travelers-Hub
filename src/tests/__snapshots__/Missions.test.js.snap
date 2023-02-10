@@ -1,5 +1,33 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`mission test missionslist renders correctly 1`] = `
+<div
+  className="container-fluid d-flex gap-2 flex-column "
+>
+  <table
+    className="table table-striped table-bordered table-hover"
+  >
+    <thead>
+      <tr>
+        <th>
+          Mission
+        </th>
+        <th>
+          Description
+        </th>
+        <th>
+          Status
+        </th>
+        <th>
+           
+        </th>
+      </tr>
+    </thead>
+    <tbody />
+  </table>
+</div>
+`;
+
 exports[`missionslist renders correctly 1`] = `
 <div
   className="container-fluid d-flex gap-2 flex-column "

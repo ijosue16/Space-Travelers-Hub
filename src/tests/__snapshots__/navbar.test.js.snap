@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Navbar renders correctlly 1`] = `
+exports[`testing navbar Navbar renders correctlly 1`] = `
 <nav
   className="navbar bg-body-tertiary d-flex flex-row mx-3 py-1 border-2 border-bottom mb-5  "
 >
