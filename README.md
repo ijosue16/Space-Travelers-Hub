@@ -150,9 +150,7 @@ You can deploy this project using [Render](https://dashboard.render.com/#)
 👤 **Iradukunda Josue**
 
 - GitHub: [@ijosue16](https://github.com/https://github.com/ijosue16)
-- Twitter: [@iradukunda_23](https://twitter.com/https://twitter.com/iradukunda_23)
-- LinkedIn: [twahirwa josue iradukunda](https://www.linkedin.com/in/twahirwa-josue-iradukunda-3ab047250/)
-
+- LinkedIn: [Iradukunda Twahirwa Josue](https://www.linkedin.com/in/iradukunda-twahirwa-josue/)
 👤 **Jacinta Ngwu**
 
 - GitHub: [@JacintaNgwu](https://github.com/JacintaNgwu)
